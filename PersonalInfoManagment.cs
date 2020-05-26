@@ -105,7 +105,7 @@ namespace class_management
             try
             {
                 ////Add student information
-                string sql = "update appointment set enable='0' where week='{0}' and day='{1}' and classtime='{2}'";
+                string sql = "update appointment set class_id='无',class_name='无',teacher_id='无',teacher_name='无',enable='0' where week='{0}' and day='{1}' and classtime='{2}'";
                 sql = string.Format(sql,week,day,classtime);
 
                 // Create Database Object Class

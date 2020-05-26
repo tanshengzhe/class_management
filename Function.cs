@@ -75,5 +75,25 @@ namespace class_management
             }
             return ds;
         }
+        /// <summary>
+        /// 随机生成class_id
+        /// </summary>
+        /// <returns></returns>
+        public int Getclass_id()
+        {
+            Random rd = new Random();
+            int i = rd.Next(10000, 99999);
+            return i;
+        }
+        /// <summary>
+        /// 随机生成teacher_id
+        /// </summary>
+        /// <returns></returns>
+        public int Getteacher()
+        {
+            Random rd = new Random();
+            int i = rd.Next(10000, 99999);
+            return i;
+        }
     }
 }

@@ -70,8 +70,9 @@
             this.bnt_GmBack.Name = "bnt_GmBack";
             this.bnt_GmBack.Size = new System.Drawing.Size(75, 23);
             this.bnt_GmBack.TabIndex = 3;
-            this.bnt_GmBack.Text = "button4";
+            this.bnt_GmBack.Text = "返回";
             this.bnt_GmBack.UseVisualStyleBackColor = true;
+            this.bnt_GmBack.Click += new System.EventHandler(this.bnt_GmBack_Click);
             // 
             // GmSelection
             // 
@@ -84,6 +85,7 @@
             this.Controls.Add(this.bnt_OrdMng);
             this.Name = "GmSelection";
             this.Text = "GmSelection";
+            this.Load += new System.EventHandler(this.GmSelection_Load);
             this.ResumeLayout(false);
 
         }

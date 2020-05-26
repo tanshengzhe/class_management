@@ -31,7 +31,7 @@ namespace class_management
 
         private void bnt_TechrInfoMng_Click(object sender, EventArgs e)
         {
-            teacher_flag = 1;
+            teacher_flag = 1;          
             GmInfoMng Frm_gmInfo = new GmInfoMng();
             Frm_gmInfo.Show();
             this.Hide();
@@ -42,6 +42,18 @@ namespace class_management
             class_flag = 1;
             GmInfoMng Frm_gmInfo = new GmInfoMng();
             Frm_gmInfo.Show();
+            this.Hide();
+        }
+
+        private void GmSelection_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bnt_GmBack_Click(object sender, EventArgs e)
+        {
+            logon Frm_logon = new logon();
+            Frm_logon.Show();
             this.Hide();
         }
     }

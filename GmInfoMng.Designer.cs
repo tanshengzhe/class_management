@@ -35,6 +35,7 @@
             this.btn_GmDelet = new System.Windows.Forms.Button();
             this.btn_GmChange = new System.Windows.Forms.Button();
             this.btn_GmAdd = new System.Windows.Forms.Button();
+            this.btn_frash = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Gm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             this.btn_GmBack.TabIndex = 15;
             this.btn_GmBack.Text = "返回";
             this.btn_GmBack.UseVisualStyleBackColor = true;
+            this.btn_GmBack.Click += new System.EventHandler(this.btn_GmBack_Click);
             // 
             // cmb_Gmweek
             // 
@@ -81,6 +83,7 @@
             this.btn_GmDelet.TabIndex = 10;
             this.btn_GmDelet.Text = "删除";
             this.btn_GmDelet.UseVisualStyleBackColor = true;
+            this.btn_GmDelet.Click += new System.EventHandler(this.btn_GmDelet_Click);
             // 
             // btn_GmChange
             // 
@@ -99,12 +102,24 @@
             this.btn_GmAdd.TabIndex = 8;
             this.btn_GmAdd.Text = "添加";
             this.btn_GmAdd.UseVisualStyleBackColor = true;
+            this.btn_GmAdd.Click += new System.EventHandler(this.btn_GmAdd_Click);
+            // 
+            // btn_frash
+            // 
+            this.btn_frash.Location = new System.Drawing.Point(616, 61);
+            this.btn_frash.Name = "btn_frash";
+            this.btn_frash.Size = new System.Drawing.Size(45, 23);
+            this.btn_frash.TabIndex = 16;
+            this.btn_frash.Text = "刷新";
+            this.btn_frash.UseVisualStyleBackColor = true;
+            this.btn_frash.Click += new System.EventHandler(this.btn_frash_Click);
             // 
             // GmInfoMng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 402);
+            this.Controls.Add(this.btn_frash);
             this.Controls.Add(this.btn_GmBack);
             this.Controls.Add(this.cmb_Gmweek);
             this.Controls.Add(this.Dgv_Gm);
@@ -114,6 +129,7 @@
             this.Controls.Add(this.btn_GmAdd);
             this.Name = "GmInfoMng";
             this.Text = "信息管理";
+            this.Load += new System.EventHandler(this.GmInfoMng_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Gm)).EndInit();
             this.ResumeLayout(false);
 
@@ -128,5 +144,6 @@
         private System.Windows.Forms.Button btn_GmDelet;
         private System.Windows.Forms.Button btn_GmChange;
         private System.Windows.Forms.Button btn_GmAdd;
+        private System.Windows.Forms.Button btn_frash;
     }
 }

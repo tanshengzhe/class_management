@@ -32,18 +32,17 @@ namespace class_management
         /// 生成课程id
         /// </summary>
         /// <returns></returns>
-        public int Getclass_id()
-        {
-            Random rd = new Random();
-            int i = rd.Next(10000, 99999);
-            return i;
-        }
+
 
         /// <summary>
         /// 写入教学周下拉菜单
         /// </summary>
         public void My_Conbobox_write_week()
         {
+            if(GmSelection.order_flag==1)
+            {
+                cmb_PimAddWeek.Items.Add("第一周");
+            }
             //选择项1
             cmb_PimAddWeek.Items.Add("第二周");
             cmb_PimAddWeek.Items.Add("第三周");
@@ -69,7 +68,15 @@ namespace class_management
         /// </summary>
         private void displayadd()
         {
-            string sql = "select week,day , classtime from appointment where enable='0'and week='{0}'and day='{1}'";
+            string sql;
+            if (GmSelection.order_flag == 1)
+            {
+                sql = "select week,day , classtime,class_name from appointment where  week='{0}'and day='{1}'";//管理员模式全部显示
+            }
+            else
+            {
+                sql = "select week,day , classtime from appointment where enable='0'and week='{0}'and day='{1}'";//非管理员模式只显示可用项
+            }
             sql = string.Format(sql, weeknum.ToString(),daynum.ToString());
             //创建数据库操作类的对象
             Function fun = new Function();
@@ -102,8 +109,9 @@ namespace class_management
             switch (cmb_PimAddWeek.SelectedItem.ToString()) //获取选择的内容
             {
 
-                
 
+
+                case "第一周": weeknum = 1; ; break;
                 case "第二周": weeknum = 2; ; break;
                 case "第三周": weeknum = 3; ; break;
                 case "第四周": weeknum = 4; ; break;
@@ -147,9 +155,10 @@ namespace class_management
             }
             try
             {
-                string sql = "update appointment set class_id='{0}',class_name='{1}',teacher_id='{2}',teacher_name='{3}',enable='1' where week='{4} 'and day='{5}'and classtime='{6}'";//向appointment中添加
-                sql = string.Format(sql, Getclass_id().ToString(), txt_classname.Text, logon.idnum, teachername, week, day, classtime);
                 Function fun = new Function();
+                string sql = "update appointment set class_id='{0}',class_name='{1}',teacher_id='{2}',teacher_name='{3}',enable='1' where week='{4} 'and day='{5}'and classtime='{6}'";//向appointment中添加
+                sql = string.Format(sql, fun.Getclass_id().ToString(), txt_classname.Text, logon.idnum, teachername, week, day, classtime);
+                
                 //
                 //
                 if (fun.NonQuery(sql) == 1)
