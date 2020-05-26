@@ -42,6 +42,7 @@
             this.bnt_OrdMng.TabIndex = 0;
             this.bnt_OrdMng.Text = "预约管理";
             this.bnt_OrdMng.UseVisualStyleBackColor = true;
+            this.bnt_OrdMng.Click += new System.EventHandler(this.bnt_OrdMng_Click);
             // 
             // bnt_TechrInfoMng
             // 
@@ -51,6 +52,7 @@
             this.bnt_TechrInfoMng.TabIndex = 1;
             this.bnt_TechrInfoMng.Text = "教师信息管理";
             this.bnt_TechrInfoMng.UseVisualStyleBackColor = true;
+            this.bnt_TechrInfoMng.Click += new System.EventHandler(this.bnt_TechrInfoMng_Click);
             // 
             // bnt_lsnMng
             // 
@@ -60,6 +62,7 @@
             this.bnt_lsnMng.TabIndex = 2;
             this.bnt_lsnMng.Text = "课程管理";
             this.bnt_lsnMng.UseVisualStyleBackColor = true;
+            this.bnt_lsnMng.Click += new System.EventHandler(this.bnt_lsnMng_Click);
             // 
             // bnt_GmBack
             // 

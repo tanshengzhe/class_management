@@ -96,6 +96,7 @@
             this.bnt_Quit.TabIndex = 12;
             this.bnt_Quit.Text = "退出";
             this.bnt_Quit.UseVisualStyleBackColor = true;
+            this.bnt_Quit.Click += new System.EventHandler(this.bnt_Quit_Click);
             // 
             // button2
             // 
@@ -116,6 +117,7 @@
             this.btnLogin_in.TabIndex = 10;
             this.btnLogin_in.Text = "登陆";
             this.btnLogin_in.UseVisualStyleBackColor = true;
+            this.btnLogin_in.Click += new System.EventHandler(this.btnLogin_in_Click);
             // 
             // logon
             // 
@@ -132,6 +134,7 @@
             this.Controls.Add(this.btnLogin_in);
             this.Name = "logon";
             this.Text = "登录";
+            this.Load += new System.EventHandler(this.logon_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

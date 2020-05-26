@@ -1,0 +1,16 @@
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\bin\Debug\class_management.exe.config
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\bin\Debug\class_management.exe
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\bin\Debug\class_management.pdb
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.csprojAssemblyReference.cache
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.logon.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.GmInfoMng.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.GmSelection.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.PersonalInfoManagment.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.PimAdd.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.PimChange.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.Pimdelet.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.Properties.Resources.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.search.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.csproj.GenerateResource.cache
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.exe
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.pdb
