@@ -29,7 +29,8 @@ create table class
 	class_id		varchar(20),
 	class_name		varchar(20),
 	teacher_name	varchar(10),
-	std_quatity		int,
+	std_quatity		varchar(2),
+	
 	primary key (class_id)
 );
 

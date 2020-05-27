@@ -70,6 +70,11 @@ namespace class_management
                 GmAddTeacher Frm_gmAddTeacher = new GmAddTeacher();
                 Frm_gmAddTeacher.Show();
             }
+            else
+            {
+                GmAddClass Frm_gmAddClass = new GmAddClass();
+                Frm_gmAddClass.Show();
+            }
         }
 
         private void btn_GmDelet_Click(object sender, EventArgs e)
@@ -153,5 +158,38 @@ namespace class_management
         {
             displaydgv();
         }
+
+        private void btn_GmChange_Click(object sender, EventArgs e)
+        {
+            int a = Dgv_Gm.CurrentRow.Index;
+            string teacher_id;
+            string teacher_name;
+            string teacher_password;
+            string class_id;
+            string class_name;
+            string class_teacher;
+            string class_std;
+            if (GmSelection.teacher_flag == 1)
+            {
+                teacher_id = Dgv_Gm.Rows[a].Cells[0].Value.ToString();
+                teacher_name = Dgv_Gm.Rows[a].Cells[1].Value.ToString();
+                teacher_password = Dgv_Gm.Rows[a].Cells[2].Value.ToString();
+                GmChangeTeacher FrmgmChangeTeacher = new GmChangeTeacher(teacher_id, teacher_name, teacher_password);
+                FrmgmChangeTeacher.Show();
+                
+            }
+            else if(GmSelection.class_flag ==1)
+            {
+                class_id = Dgv_Gm.Rows[a].Cells[0].Value.ToString();
+                class_name = Dgv_Gm.Rows[a].Cells[1].Value.ToString();
+                class_teacher = Dgv_Gm.Rows[a].Cells[2].Value.ToString();
+                class_std= Dgv_Gm.Rows[a].Cells[3].Value.ToString();
+                GmChangeClass Frm_gmChangeClass = new GmChangeClass(class_id, class_name, class_teacher, class_std);
+                Frm_gmChangeClass.Show();
+
+            }
+        }
+
+
     }
 }

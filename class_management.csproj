@@ -53,11 +53,35 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Function.cs" />
+    <Compile Include="GmAddClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GmAddClass.Designer.cs">
+      <DependentUpon>GmAddClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="GmAddTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GmAddTeacher.Designer.cs">
       <DependentUpon>GmAddTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GmChangeAppcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GmChangeAppcs.Designer.cs">
+      <DependentUpon>GmChangeAppcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GmChangeClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GmChangeClass.Designer.cs">
+      <DependentUpon>GmChangeClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GmChangeTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GmChangeTeacher.Designer.cs">
+      <DependentUpon>GmChangeTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="GmInfoMng.cs">
       <SubType>Form</SubType>
@@ -106,8 +130,20 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GmAddClass.resx">
+      <DependentUpon>GmAddClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GmAddTeacher.resx">
       <DependentUpon>GmAddTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GmChangeAppcs.resx">
+      <DependentUpon>GmChangeAppcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GmChangeClass.resx">
+      <DependentUpon>GmChangeClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GmChangeTeacher.resx">
+      <DependentUpon>GmChangeTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GmInfoMng.resx">
       <DependentUpon>GmInfoMng.cs</DependentUpon>

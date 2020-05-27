@@ -93,6 +93,7 @@
             this.btn_GmChange.TabIndex = 9;
             this.btn_GmChange.Text = "修改";
             this.btn_GmChange.UseVisualStyleBackColor = true;
+            this.btn_GmChange.Click += new System.EventHandler(this.btn_GmChange_Click);
             // 
             // btn_GmAdd
             // 
