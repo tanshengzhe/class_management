@@ -47,11 +47,11 @@ namespace class_management
                 //
                 if (fun.NonQuery(sql) == 1)
                 {
-                    MessageBox.Show("添加成功！");
+                    MessageBox.Show("修改成功！");
                 }
                 else
                 {
-                    MessageBox.Show("添加失败！");
+                    MessageBox.Show("修改失败！");
                 }
 
             }

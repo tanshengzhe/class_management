@@ -111,7 +111,7 @@
             this.btn_change.Name = "btn_change";
             this.btn_change.Size = new System.Drawing.Size(75, 23);
             this.btn_change.TabIndex = 9;
-            this.btn_change.Text = "添加";
+            this.btn_change.Text = "修改";
             this.btn_change.UseVisualStyleBackColor = true;
             this.btn_change.Click += new System.EventHandler(this.btn_change_Click);
             // 

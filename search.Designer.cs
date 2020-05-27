@@ -68,6 +68,7 @@
             this.Controls.Add(this.txt_classname);
             this.Controls.Add(this.btn_SearchBack);
             this.Name = "search";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "信息查找";
             this.Load += new System.EventHandler(this.search_Load);
             this.ResumeLayout(false);

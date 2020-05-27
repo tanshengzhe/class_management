@@ -36,7 +36,6 @@
             this.Dgv_Pim = new System.Windows.Forms.DataGridView();
             this.cmb_Pimweek = new System.Windows.Forms.ComboBox();
             this.btn_PimBack = new System.Windows.Forms.Button();
-            this.cmb_Pimday = new System.Windows.Forms.ComboBox();
             this.btn_prsinfo = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Pim)).BeginInit();
@@ -120,14 +119,6 @@
             this.btn_PimBack.UseVisualStyleBackColor = true;
             this.btn_PimBack.Click += new System.EventHandler(this.btn_PimBack_Click);
             // 
-            // cmb_Pimday
-            // 
-            this.cmb_Pimday.FormattingEnabled = true;
-            this.cmb_Pimday.Location = new System.Drawing.Point(510, 307);
-            this.cmb_Pimday.Name = "cmb_Pimday";
-            this.cmb_Pimday.Size = new System.Drawing.Size(82, 20);
-            this.cmb_Pimday.TabIndex = 8;
-            // 
             // btn_prsinfo
             // 
             this.btn_prsinfo.Location = new System.Drawing.Point(47, 289);
@@ -155,7 +146,6 @@
             this.ClientSize = new System.Drawing.Size(696, 406);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_prsinfo);
-            this.Controls.Add(this.cmb_Pimday);
             this.Controls.Add(this.btn_PimBack);
             this.Controls.Add(this.cmb_Pimweek);
             this.Controls.Add(this.Dgv_Pim);
@@ -184,7 +174,6 @@
         private System.Windows.Forms.DataGridView Dgv_Pim;
         private System.Windows.Forms.ComboBox cmb_Pimweek;
         private System.Windows.Forms.Button btn_PimBack;
-        private System.Windows.Forms.ComboBox cmb_Pimday;
         private System.Windows.Forms.Button btn_prsinfo;
         private System.Windows.Forms.Button button1;
     }
