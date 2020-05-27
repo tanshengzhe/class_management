@@ -131,6 +131,7 @@
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_change);
             this.Name = "GmAddTeacher";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GmAddTeacher";
             this.ResumeLayout(false);
             this.PerformLayout();

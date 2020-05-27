@@ -91,6 +91,13 @@ namespace class_management
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GmSelection GmSlct = new GmSelection();
+            GmSlct.Show();
+            this.Hide();
+        }
     }
 }
 

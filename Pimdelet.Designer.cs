@@ -69,6 +69,7 @@
             this.Controls.Add(this.btn_PdDelet);
             this.Controls.Add(this.label1);
             this.Name = "Pimdelet";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "删除";
             this.ResumeLayout(false);
             this.PerformLayout();

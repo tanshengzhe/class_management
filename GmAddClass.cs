@@ -66,8 +66,8 @@ namespace class_management
             try
             {
                 Function fun = new Function();
-                string sql = "insert into class values('{0}','{1}','{2}','{3}');";//向appointment中添加
-                sql = string.Format(sql, txt_teacherid.Text, txt_teachername.Text, txt_tchrpassword.Text,txt_stdQuatuty.Text);
+                string sql = "insert into class values('{0}','{1}','{2}','{3}','{4}');";//向appointment中添加
+                sql = string.Format(sql, txt_teacherid.Text, txt_teachername.Text, txt_teacheridreal.Text,txt_tchrpassword.Text,txt_stdQuatuty.Text);
 
                 //
                 //
@@ -84,6 +84,11 @@ namespace class_management
             catch { }
             finally { }
             this.Hide();
+        }
+
+        private void GmAddClass_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

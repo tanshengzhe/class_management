@@ -100,6 +100,7 @@
             this.Controls.Add(this.lbl_PcTeacher);
             this.Controls.Add(this.txt_Pcclasschange);
             this.Name = "PimChange";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "修改";
             this.ResumeLayout(false);
             this.PerformLayout();

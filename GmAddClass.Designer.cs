@@ -39,6 +39,8 @@
             this.btn_change = new System.Windows.Forms.Button();
             this.txt_stdQuatuty = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txt_teacheridreal = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txt_teachername
@@ -89,7 +91,7 @@
             // 
             // txt_tchrpassword
             // 
-            this.txt_tchrpassword.Location = new System.Drawing.Point(154, 208);
+            this.txt_tchrpassword.Location = new System.Drawing.Point(155, 239);
             this.txt_tchrpassword.Name = "txt_tchrpassword";
             this.txt_tchrpassword.Size = new System.Drawing.Size(100, 21);
             this.txt_tchrpassword.TabIndex = 12;
@@ -98,7 +100,7 @@
             // lbl_teacherpaddword
             // 
             this.lbl_teacherpaddword.AutoSize = true;
-            this.lbl_teacherpaddword.Location = new System.Drawing.Point(72, 211);
+            this.lbl_teacherpaddword.Location = new System.Drawing.Point(73, 242);
             this.lbl_teacherpaddword.Name = "lbl_teacherpaddword";
             this.lbl_teacherpaddword.Size = new System.Drawing.Size(53, 12);
             this.lbl_teacherpaddword.TabIndex = 11;
@@ -107,7 +109,7 @@
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(217, 302);
+            this.btn_back.Location = new System.Drawing.Point(218, 333);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(75, 23);
             this.btn_back.TabIndex = 10;
@@ -117,7 +119,7 @@
             // 
             // btn_change
             // 
-            this.btn_change.Location = new System.Drawing.Point(64, 302);
+            this.btn_change.Location = new System.Drawing.Point(65, 333);
             this.btn_change.Name = "btn_change";
             this.btn_change.Size = new System.Drawing.Size(75, 23);
             this.btn_change.TabIndex = 9;
@@ -127,7 +129,7 @@
             // 
             // txt_stdQuatuty
             // 
-            this.txt_stdQuatuty.Location = new System.Drawing.Point(154, 256);
+            this.txt_stdQuatuty.Location = new System.Drawing.Point(155, 287);
             this.txt_stdQuatuty.Name = "txt_stdQuatuty";
             this.txt_stdQuatuty.Size = new System.Drawing.Size(100, 21);
             this.txt_stdQuatuty.TabIndex = 19;
@@ -135,17 +137,35 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 259);
+            this.label3.Location = new System.Drawing.Point(73, 290);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 18;
             this.label3.Text = "上课人数";
             // 
+            // txt_teacheridreal
+            // 
+            this.txt_teacheridreal.Location = new System.Drawing.Point(154, 198);
+            this.txt_teacheridreal.Name = "txt_teacheridreal";
+            this.txt_teacheridreal.Size = new System.Drawing.Size(100, 21);
+            this.txt_teacheridreal.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(72, 201);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "教师工号";
+            // 
             // GmAddClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 368);
+            this.ClientSize = new System.Drawing.Size(364, 394);
+            this.Controls.Add(this.txt_teacheridreal);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_stdQuatuty);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_teachername);
@@ -158,7 +178,9 @@
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_change);
             this.Name = "GmAddClass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GmAddClass";
+            this.Load += new System.EventHandler(this.GmAddClass_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,5 +199,7 @@
         private System.Windows.Forms.Button btn_change;
         private System.Windows.Forms.TextBox txt_stdQuatuty;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_teacheridreal;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -10,22 +10,17 @@ using System.Windows.Forms;
 
 namespace class_management
 {
-    public partial class search : Form
+    public partial class searchteacher : Form
     {
-        public string classname;
-        public search()
+        public string teachername;
+        public searchteacher()
         {
             InitializeComponent();
         }
 
-        private void search_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_SearchBack_Click(object sender, EventArgs e)
         {
-            classname = txt_classname.Text;
+            teachername = txt_classname.Text;
             this.DialogResult = DialogResult.OK;
         }
     }

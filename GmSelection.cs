@@ -56,5 +56,12 @@ namespace class_management
             Frm_logon.Show();
             this.Hide();
         }
+
+        private void bnt_timemagn_Click(object sender, EventArgs e)
+        {
+            GmTimechange Frm_gmTimechange = new GmTimechange();
+            Frm_gmTimechange.Show();
+            
+        }
     }
 }

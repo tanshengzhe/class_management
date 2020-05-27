@@ -130,6 +130,7 @@
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_change);
             this.Name = "GmChangeTeacher";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GmChangeTeacher";
             this.Load += new System.EventHandler(this.GmChangeTeacher_Load);
             this.ResumeLayout(false);

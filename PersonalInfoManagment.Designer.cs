@@ -37,6 +37,8 @@
             this.cmb_Pimweek = new System.Windows.Forms.ComboBox();
             this.btn_PimBack = new System.Windows.Forms.Button();
             this.cmb_Pimday = new System.Windows.Forms.ComboBox();
+            this.btn_prsinfo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Pim)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +46,7 @@
             // 
             this.btn_PimAdd.Location = new System.Drawing.Point(47, 86);
             this.btn_PimAdd.Name = "btn_PimAdd";
-            this.btn_PimAdd.Size = new System.Drawing.Size(75, 23);
+            this.btn_PimAdd.Size = new System.Drawing.Size(98, 23);
             this.btn_PimAdd.TabIndex = 0;
             this.btn_PimAdd.Text = "添加";
             this.btn_PimAdd.UseVisualStyleBackColor = true;
@@ -52,9 +54,9 @@
             // 
             // btn_PimChange
             // 
-            this.btn_PimChange.Location = new System.Drawing.Point(47, 178);
+            this.btn_PimChange.Location = new System.Drawing.Point(47, 152);
             this.btn_PimChange.Name = "btn_PimChange";
-            this.btn_PimChange.Size = new System.Drawing.Size(75, 23);
+            this.btn_PimChange.Size = new System.Drawing.Size(98, 23);
             this.btn_PimChange.TabIndex = 1;
             this.btn_PimChange.Text = "修改";
             this.btn_PimChange.UseVisualStyleBackColor = true;
@@ -62,9 +64,9 @@
             // 
             // btn_PimDelet
             // 
-            this.btn_PimDelet.Location = new System.Drawing.Point(47, 271);
+            this.btn_PimDelet.Location = new System.Drawing.Point(47, 219);
             this.btn_PimDelet.Name = "btn_PimDelet";
-            this.btn_PimDelet.Size = new System.Drawing.Size(75, 23);
+            this.btn_PimDelet.Size = new System.Drawing.Size(98, 23);
             this.btn_PimDelet.TabIndex = 2;
             this.btn_PimDelet.Text = "删除";
             this.btn_PimDelet.UseVisualStyleBackColor = true;
@@ -126,11 +128,33 @@
             this.cmb_Pimday.Size = new System.Drawing.Size(82, 20);
             this.cmb_Pimday.TabIndex = 8;
             // 
+            // btn_prsinfo
+            // 
+            this.btn_prsinfo.Location = new System.Drawing.Point(47, 289);
+            this.btn_prsinfo.Name = "btn_prsinfo";
+            this.btn_prsinfo.Size = new System.Drawing.Size(98, 23);
+            this.btn_prsinfo.TabIndex = 9;
+            this.btn_prsinfo.Text = "个人信息管理";
+            this.btn_prsinfo.UseVisualStyleBackColor = true;
+            this.btn_prsinfo.Click += new System.EventHandler(this.btn_prsinfo_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(566, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "筛选";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // PersonalInfoManagment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 406);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_prsinfo);
             this.Controls.Add(this.cmb_Pimday);
             this.Controls.Add(this.btn_PimBack);
             this.Controls.Add(this.cmb_Pimweek);
@@ -141,6 +165,7 @@
             this.Controls.Add(this.btn_PimChange);
             this.Controls.Add(this.btn_PimAdd);
             this.Name = "PersonalInfoManagment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "个人中心";
             this.Load += new System.EventHandler(this.PersonalInfoManagment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Pim)).EndInit();
@@ -160,5 +185,7 @@
         private System.Windows.Forms.ComboBox cmb_Pimweek;
         private System.Windows.Forms.Button btn_PimBack;
         private System.Windows.Forms.ComboBox cmb_Pimday;
+        private System.Windows.Forms.Button btn_prsinfo;
+        private System.Windows.Forms.Button button1;
     }
 }

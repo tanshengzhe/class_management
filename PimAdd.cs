@@ -69,14 +69,14 @@ namespace class_management
         private void displayadd()
         {
             string sql;
-            if (GmSelection.order_flag == 1)
-            {
-                sql = "select week,day , classtime,class_name from appointment where  week='{0}'and day='{1}'";//管理员模式全部显示
-            }
-            else
-            {
-                sql = "select week,day , classtime from appointment where enable='0'and week='{0}'and day='{1}'";//非管理员模式只显示可用项
-            }
+            //if (GmSelection.order_flag == 1)
+            //{
+            //    sql = "select enable, week,day , classtime,class_name from appointment where  week='{0}'and day='{1}'";//管理员模式全部显示
+            //}
+            //else
+            //{
+                sql = "select enable, week,day , classtime from appointment where enable='可用'and week='{0}'and day='{1}'";//非管理员模式只显示可用项
+            //}
             sql = string.Format(sql, weeknum.ToString(),daynum.ToString());
             //创建数据库操作类的对象
             Function fun = new Function();
@@ -86,6 +86,32 @@ namespace class_management
 
             Dgv_PA.DataSource = dt;
             Dgv_PA.Refresh();
+        }
+        /// <summary>
+        /// 显示课程dgv
+        /// </summary>
+        public void dispalyClass()
+        {
+            string sql;
+            if (GmSelection.order_flag == 1)
+            {
+                sql = "select * from class ";//管理员模式全部显示
+                
+            }
+            else
+            {
+                sql = "select * from class where teacher_id ='{0}'";//非管理员模式只显示可用项sql = string.Format(sql, weeknum.ToString(), daynum.ToString());
+                sql = string.Format(sql, logon.idnum);
+            }
+            
+            //创建数据库操作类的对象
+            Function fun = new Function();
+            //执行对数据库表的查询操作
+            DataSet ds = fun.Query(sql);
+            DataTable dt = ds.Tables[0];
+
+            Dgv_class.DataSource = dt;
+            Dgv_class.Refresh();
         }
         public PimAdd()
         {
@@ -100,6 +126,7 @@ namespace class_management
         private void PimAdd_Load(object sender, EventArgs e)
         {
             displayadd();//更新显示
+            dispalyClass();//更新课程选择
             My_Conbobox_write_week();//下拉菜单写入
             My_Conbobox_write_day();
         }
@@ -145,20 +172,24 @@ namespace class_management
         private void bnt_PaAdd_Click(object sender, EventArgs e)
         {
             int a = Dgv_PA.CurrentRow.Index;
-            string week = Dgv_PA.Rows[a].Cells[0].Value.ToString();
-            string day = Dgv_PA.Rows[a].Cells[1].Value.ToString();
-            string classtime = Dgv_PA.Rows[a].Cells[2].Value.ToString();
-            Getteachername();//获取教师名
-            if (txt_classname.Text.Trim() == "" || txt_stdquatity.Text.Trim() == "")
-            {
-                MessageBox.Show("信息不能为空,添加失败！");
-            }
+            string week = Dgv_PA.Rows[a].Cells[1].Value.ToString();
+            string day = Dgv_PA.Rows[a].Cells[2].Value.ToString();
+            string classtime = Dgv_PA.Rows[a].Cells[3].Value.ToString();
+
+            int b = Dgv_class.CurrentRow.Index;
+            string classid= Dgv_class.Rows[b].Cells[0].Value.ToString(); ;
+            string classname=Dgv_class.Rows[b].Cells[1].Value.ToString();
+            string teacherid = Dgv_class.Rows[b].Cells[2].Value.ToString();
+            string teachername = Dgv_class.Rows[b].Cells[3].Value.ToString();
+
+            //Getteachername();//获取教师名
+
             try
             {
                 Function fun = new Function();
-                string sql = "update appointment set class_id='{0}',class_name='{1}',teacher_id='{2}',teacher_name='{3}',enable='1' where week='{4} 'and day='{5}'and classtime='{6}'";//向appointment中添加
-                sql = string.Format(sql, fun.Getclass_id().ToString(), txt_classname.Text, logon.idnum, teachername, week, day, classtime);
-                
+                string sql = "update appointment set class_id='{0}',class_name='{1}',teacher_id='{2}',teacher_name='{3}',enable='占用' where week='{4} 'and day='{5}'and classtime='{6}'";//向appointment中添加
+                sql = string.Format(sql, classid,classname,teacherid,teachername, week, day, classtime);
+
                 //
                 //
                 if (fun.NonQuery(sql) == 1)
@@ -169,7 +200,7 @@ namespace class_management
                 {
                     MessageBox.Show("添加失败！");
                 }
-                
+
             }
             catch { }
             finally { }
@@ -178,9 +209,34 @@ namespace class_management
 
         private void bnt_PaBack_Click(object sender, EventArgs e)
         {
-            PersonalInfoManagment Frm_personalInfoManagment = new PersonalInfoManagment();
-            Frm_personalInfoManagment.Show();
             this.Hide();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_frash_Click(object sender, EventArgs e)
+        {
+            displayadd();//更新显示
+            dispalyClass();//更新课程选择
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (GmSelection.order_flag == 1)
+            {
+                GmAddClass Frm_gmAddClass = new GmAddClass();
+                Frm_gmAddClass.Show();
+            }
+            else
+            {
+                
+                PimAddClass Frm_pimAddClass = new PimAddClass();
+                Frm_pimAddClass.Show();
+            }
+
         }
     }
 }

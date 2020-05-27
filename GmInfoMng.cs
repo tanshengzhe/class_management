@@ -12,12 +12,83 @@ namespace class_management
 {
     public partial class GmInfoMng : Form
     {
+        private void displaysortteacher(string name)
+        {
+
+            string sql = "select * from  teacher where teacher_name='{0}'";
+            sql = string.Format(sql, name);
+            //创建数据库操作类的对象
+            Function fun = new Function();
+            //执行对数据库表的查询操作
+            DataSet ds = fun.Query(sql);
+            DataTable dt = ds.Tables[0];
+
+            Dgv_Gm.DataSource = dt;
+            Dgv_Gm.Refresh();
+
+        }
+        private void displaysortclass(string name)
+        {
+
+                string sql = "select * from  class where class_name='{0}'";
+                sql = string.Format(sql, name);
+                //创建数据库操作类的对象
+                Function fun = new Function();
+                //执行对数据库表的查询操作
+                DataSet ds = fun.Query(sql);
+                DataTable dt = ds.Tables[0];
+
+                Dgv_Gm.DataSource = dt;
+                Dgv_Gm.Refresh();
+            
+        }
+        /// <summary>
+        /// 筛选后显示
+        /// </summary>
+        /// <param name="readeridd"></param>
+        private void displaysortorder(String readeridd, string classname,string teachername)
+        {
+            string sql="";
+
+            if (classname == "" && teachername != "")
+            {
+                sql = "select * from  appointment where teacher_name='{0}' and  enable='占用'";
+                sql = string.Format(sql, teachername);
+            }
+            else if (classname != "" && teachername == "")
+            {
+                sql = "select * from  appointment where class_name='{0}' and  enable='占用'";
+                sql = string.Format(sql, classname);
+            }
+            else if (classname != "" && teachername != "")
+            {
+                 sql = "select * from  appointment where teacher_name='{0}' and class_name='{1}' and  enable='占用'";
+                sql = string.Format(sql,  teachername, classname);
+            }
+            else
+            {
+                MessageBox.Show("不能全为空");
+                return;
+            }
+            //创建数据库操作类的对象
+            Function fun = new Function();
+                //执行对数据库表的查询操作
+                DataSet ds = fun.Query(sql);
+                DataTable dt = ds.Tables[0];
+
+                Dgv_Gm.DataSource = dt;
+                Dgv_Gm.Refresh();
+
+            
+
+
+        }
         public  void displaydgv()
         {
             string sql;
             if (GmSelection.order_flag==1)
             {
-                 sql = "select * from  appointment where enable='1' ";
+                 sql = "select * from  appointment where enable='占用' ";
             }
             else if(GmSelection.teacher_flag==1)
             {
@@ -161,6 +232,7 @@ namespace class_management
 
         private void btn_GmChange_Click(object sender, EventArgs e)
         {
+            
             int a = Dgv_Gm.CurrentRow.Index;
             string teacher_id;
             string teacher_name;
@@ -188,8 +260,69 @@ namespace class_management
                 Frm_gmChangeClass.Show();
 
             }
+            else
+            {
+                GmChangeAppcs Frm_gmChangeAppcs = new GmChangeAppcs() ;
+                Frm_gmChangeAppcs.Show();
+            }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int a = Dgv_Gm.CurrentRow.Index;
+            string week;
+            string day;
+            string classtime;
+            string teacherid;
+            string classid;
+            string sql;
+            if (GmSelection.order_flag == 1)
+            {
+                week = Dgv_Gm.Rows[a].Cells[0].Value.ToString();
+                day = Dgv_Gm.Rows[a].Cells[1].Value.ToString();
+                classtime = Dgv_Gm.Rows[a].Cells[2].Value.ToString();
+                sql = "update appointment set class_id='无',class_name='无',teacher_id='无',teacher_name='无',enable='1' where week='{0}' and day='{1}' and classtime='{2}'";
+                sql = string.Format(sql, week, day, classtime);
+            }
+        }
 
+        private void cmb_Gmweek_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (GmSelection.order_flag == 1)
+            {
+                searchGm f2 = new searchGm();
+                if (f2.ShowDialog() == DialogResult.OK)
+                {
+                    displaysortorder(logon.idnum, f2.classname, f2.teachername);
+                    f2.Close();
+
+                }
+            }
+            else if(GmSelection.teacher_flag==1)
+            {
+                searchteacher f2 = new searchteacher();
+                if (f2.ShowDialog() == DialogResult.OK)
+                {
+                    displaysortteacher(f2.teachername);
+                    f2.Close();
+
+                }
+            }
+            else
+            {
+                search f2 = new search();
+                if (f2.ShowDialog() == DialogResult.OK)
+                {
+                    displaysortclass(f2.classname);
+                    f2.Close();
+
+                }
+            }
+        }
     }
 }

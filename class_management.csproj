@@ -95,6 +95,12 @@
     <Compile Include="GmSelection.Designer.cs">
       <DependentUpon>GmSelection.cs</DependentUpon>
     </Compile>
+    <Compile Include="GmTimechange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GmTimechange.Designer.cs">
+      <DependentUpon>GmTimechange.cs</DependentUpon>
+    </Compile>
     <Compile Include="PersonalInfoManagment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,11 +113,23 @@
     <Compile Include="PimAdd.Designer.cs">
       <DependentUpon>PimAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="PimAddClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PimAddClass.Designer.cs">
+      <DependentUpon>PimAddClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="PimChange.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PimChange.Designer.cs">
       <DependentUpon>PimChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PimChangTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PimChangTeacher.Designer.cs">
+      <DependentUpon>PimChangTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="Pimdelet.cs">
       <SubType>Form</SubType>
@@ -126,6 +144,18 @@
     </Compile>
     <Compile Include="search.Designer.cs">
       <DependentUpon>search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchGm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchGm.Designer.cs">
+      <DependentUpon>searchGm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchteacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchteacher.Designer.cs">
+      <DependentUpon>searchteacher.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -151,14 +181,23 @@
     <EmbeddedResource Include="GmSelection.resx">
       <DependentUpon>GmSelection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GmTimechange.resx">
+      <DependentUpon>GmTimechange.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PersonalInfoManagment.resx">
       <DependentUpon>PersonalInfoManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PimAdd.resx">
       <DependentUpon>PimAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PimAddClass.resx">
+      <DependentUpon>PimAddClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PimChange.resx">
       <DependentUpon>PimChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PimChangTeacher.resx">
+      <DependentUpon>PimChangTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pimdelet.resx">
       <DependentUpon>Pimdelet.cs</DependentUpon>
@@ -174,6 +213,12 @@
     </Compile>
     <EmbeddedResource Include="search.resx">
       <DependentUpon>search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchGm.resx">
+      <DependentUpon>searchGm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchteacher.resx">
+      <DependentUpon>searchteacher.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

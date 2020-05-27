@@ -18,3 +18,9 @@ C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class
 C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.GmChangeTeacher.resources
 C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.GmAddClass.resources
 C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.GmChangeClass.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.GmChangeAppcs.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.PimAddClass.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.GmTimechange.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.PimChangTeacher.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.searchGm.resources
+C:\Users\tszts\iCloudDrive\2020春季学习资料\面向对象程序设计\class_management\obj\Debug\class_management.searchteacher.resources

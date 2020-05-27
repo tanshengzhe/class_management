@@ -31,17 +31,7 @@ namespace class_management
             cmb_Pimweek.Items.Add("第四周");
             cmb_Pimweek.Items.Add("第五周");
         }
-        /// <summary>
-        /// 写入星期下拉菜单
-        /// </summary>
-        public void My_Conbobox_write_day()
-        {
-            cmb_Pimweek.Items.Add("星期一");//选择项1
-            cmb_Pimweek.Items.Add("星期二");
-            cmb_Pimweek.Items.Add("星期三");
-            cmb_Pimweek.Items.Add("星期四");
-            cmb_Pimweek.Items.Add("星期五");
-        }
+
         /// <summary>
         /// 在datagriyview中显示
         /// </summary>
@@ -51,7 +41,7 @@ namespace class_management
 
             if (readeridd == "admin")
             {
-                string sql = "select * from  appointment where enable='1' ";
+                string sql = "select * from  appointment where enable='禁用' or enable='占用' ";
                 sql = string.Format(sql, readeridd);
                 //创建数据库操作类的对象
                 Function fun = new Function();
@@ -64,7 +54,7 @@ namespace class_management
             }
             else
             {
-                string sql = "select * from  appointment where teacher_id ='{0}' and  enable='1'";
+                string sql = "select * from  appointment where teacher_id ='{0}' and  enable='占用'";
                 sql = string.Format(sql, readeridd);
                 //创建数据库操作类的对象
                 Function fun = new Function();
@@ -76,7 +66,78 @@ namespace class_management
                 Dgv_Pim.Refresh();
             }
         }
-     
+        /// <summary>
+        /// 筛选后显示
+        /// </summary>
+        /// <param name="readeridd"></param>
+        private void displaysort(String readeridd,string name)
+        {
+
+            if (readeridd == "admin")
+            {
+                string sql = "select * from  appointment where enable='禁用' or enable='占用' ";
+                sql = string.Format(sql, readeridd);
+                //创建数据库操作类的对象
+                Function fun = new Function();
+                //执行对数据库表的查询操作
+                DataSet ds = fun.Query(sql);
+                DataTable dt = ds.Tables[0];
+
+                Dgv_Pim.DataSource = dt;
+                Dgv_Pim.Refresh();
+            }
+            else
+            {
+                string sql = "select * from  appointment where teacher_id ='{0}'and class_name='{1}' and  enable='占用'";
+                sql = string.Format(sql, readeridd,name);
+                //创建数据库操作类的对象
+                Function fun = new Function();
+                //执行对数据库表的查询操作
+                DataSet ds = fun.Query(sql);
+                DataTable dt = ds.Tables[0];
+
+                Dgv_Pim.DataSource = dt;
+                Dgv_Pim.Refresh();
+            }
+        }
+
+        /// <summary>
+        /// 在datagriyview中显示
+        /// </summary>
+        /// <param name="readeridd"></param>
+        ///
+        /// 
+        private void displayweek(String readeridd,string week)
+        {
+
+            if (readeridd == "admin")
+            {
+                string sql = "select * from  appointment where enable='禁用' or enable='占用' ";
+                sql = string.Format(sql, readeridd);
+                //创建数据库操作类的对象
+                Function fun = new Function();
+                //执行对数据库表的查询操作
+                DataSet ds = fun.Query(sql);
+                DataTable dt = ds.Tables[0];
+
+                Dgv_Pim.DataSource = dt;
+                Dgv_Pim.Refresh();
+            }
+            else
+            {
+                string sql = "select * from  appointment where teacher_id ='{0}' and week='{1}' and  enable='占用'";
+                sql = string.Format(sql, readeridd,week);
+                //创建数据库操作类的对象
+                Function fun = new Function();
+                //执行对数据库表的查询操作
+                DataSet ds = fun.Query(sql);
+                DataTable dt = ds.Tables[0];
+
+                Dgv_Pim.DataSource = dt;
+                Dgv_Pim.Refresh();
+            }
+        }
+
         public PersonalInfoManagment()
         {
             InitializeComponent();
@@ -86,7 +147,6 @@ namespace class_management
         {
             displayy(logon.idnum);
             My_Conbobox_write_week();//写入下拉菜单week
-            My_Conbobox_write_day();//写入下拉菜单day
              weeknum = 1;
              daynum = 1;
         }
@@ -105,7 +165,7 @@ namespace class_management
             try
             {
                 ////Add student information
-                string sql = "update appointment set class_id='无',class_name='无',teacher_id='无',teacher_name='无',enable='0' where week='{0}' and day='{1}' and classtime='{2}'";
+                string sql = "update appointment set class_id='无',class_name='无',teacher_id='无',teacher_name='无',enable='可用' where week='{0}' and day='{1}' and classtime='{2}'";
                 sql = string.Format(sql,week,day,classtime);
 
                 // Create Database Object Class
@@ -140,13 +200,17 @@ namespace class_management
             switch (cmb_Pimweek.SelectedItem.ToString()) //获取选择的内容
             {
 
-                case "第一周":weeknum = 1; ; break;
 
-                case "USB2": MessageBox.Show("B"); break;
 
-                case "USB3": MessageBox.Show("C"); break;
+                case "第一周": weeknum = 1; ; break;
+                case "第二周": weeknum = 2; ; break;
+                case "第三周": weeknum = 3; ; break;
+                case "第四周": weeknum = 4; ; break;
+                case "第五周": weeknum = 5; ; break;
 
             }
+            displayweek(logon.idnum, weeknum.ToString());
+
         }
 
         private void btn_PimAdd_Click(object sender, EventArgs e)
@@ -167,7 +231,7 @@ namespace class_management
             prs_day = Dgv_Pim.Rows[a].Cells[1].Value.ToString();
             prs_classtime = Dgv_Pim.Rows[a].Cells[2].Value.ToString();
 
-            PimChange Frm_pimChange = new PimChange();
+            GmChangeAppcs Frm_pimChange = new GmChangeAppcs();
             Frm_pimChange.Show();
         }
 
@@ -176,6 +240,25 @@ namespace class_management
             logon Frm_logon = new logon();
             Frm_logon.Show();
             this.Hide();
+        }
+
+        private void btn_prsinfo_Click(object sender, EventArgs e)
+        {
+            PimChangTeacher Frm_pimChangTeacher = new PimChangTeacher();
+            Frm_pimChangTeacher.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            search f2 = new search();
+            if (f2.ShowDialog() == DialogResult.OK)
+            {
+                displaysort(logon.idnum, f2.classname);
+                f2.Close();
+                
+            }
+            
+
         }
     }
 }
